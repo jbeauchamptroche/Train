@@ -1,17 +1,21 @@
+<!-- powerful-bayou-30367.herokuapp.com -->
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Train Schedule</title>
+	<meta charset="utf-8">
+	<meta name ="viewport" content="width=device-width, initial-scale=1">
+
 <!-- JQuery -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 
  <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-  <!-- Java Script -->  
-  <script type="text/javascript" src="assets/javascript/script.js"></script>  
 
- <!-- style css -->
+
+ <!-- reset css -->
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 
  <!-- Bootstrap File -->
@@ -21,14 +25,128 @@
  <!-- style css -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
+<!-- Link to Moment.js  -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
 
-
+<!-- LINK TO FIREBASE GOES HERE -->
+<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
 
 
 
 
 </head>
 <body>
+
+
+
+<div class="container">
+        <div class="jumbotron" style="background-color: transparent; ; color: black;">
+            <h1 class="text-center"><strong>World of Trains</strong></h1>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                    <div class="panel-heading" style="background-color: transparent; ; color: black;">
+                        <h3 class="panel-title"><strong>Train Schedule</strong></h3>
+                    </div>
+                  <div class="panel-body">
+
+
+    
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Train Name</th>
+      <th>Destination</th>
+      <th>Frequency (Minutes)</th>
+      <th>Next Arrival</th>
+      <th>Minutes Away</th>
+      <th>Track Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Amtrak Downeaster</th>
+      <td>Boston North Station</td>
+      <td>25</td>
+      <td>05.35</td>
+      <td>10</td>
+      <td>110</td>
+    </tr>
+     <th scope="row">Metro North</th>
+      <td>Yankees-E. 153rd Street</td>
+      <td>30</td>
+      <td>1.39</td>
+      <td>20</td>
+      <td>19</td>
+    </tr>
+    </tr>
+     <th scope="row">Long Island Railroad</th>
+      <td>Long Beach</td>
+      <td>25</td>
+      <td>05.35</td>S
+      <td>10</td>
+      <td>100</td>
+    </tr>
+        </tr>
+     <th scope="row">China G101</th>
+      <td>Beijing Nan South</td>
+      <td>45</td>
+      <td>2.30</td>
+      <td>15</td>
+      <td>119</td>
+    </tr>
+    </tr>
+     <th scope="row">German Rail Pass</th>
+      <td>Koeln HBF (Germany)</td>
+      <td>65</td>
+      <td>05.50</td>
+      <td>12</td>
+      <td>89</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+  </br>
+
+<div class="row">
+    <div class="col-md-12">
+      
+      <div class="panel panel-default">
+         <div class="panel-heading">
+           <h3 class="panel-title"><strong>Add a Train</h3>
+          </div>
+          <div class="panel-body">
+            
+        <form>
+          <div class="form-group">
+            <label for="name">Train Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="destination">Destination</label>
+            <input type="text" class="form-control" id="destination" placeholder="Destination Location">
+          </div>
+          <div class="form-group">
+            <label for="time">First Train Time ()</label>
+            <input type="text" class="form-control" id="time" placeholder="HH:mm">
+          </div>
+          <div class="form-group">
+            <label for="freq">Frequency (min)</label>
+            <input type="number" class="form-control" id="freq" placeholder="">
+          </div>
+          <button type="submit" id="infoSubmit" class="btn btn-default">Submit</button>
+        </form>
+
+          </div>
+ 
+
+
+ <!-- Java Script -->  
+  <script type="text/javascript" src="assets/javascript/script.js"></script>  
+
 
 </body>
 </html>

@@ -1,3 +1,10 @@
+body, 
+html {
+	min-height: 100%;
+}
+
 body {
-	background-color: red;
+	background-image: url(https://squag.com/app/uploads/2013/05/train-track.jpg);
+	background-size:cover;
+	background-repeat: no-repeat;
 }
