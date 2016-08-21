@@ -18,13 +18,13 @@ var trainName = "";
 var destination = "";
 var frequency = 0;
 
-//STORE AND REFERENCE DATA
+//STORE AND REFERENCE DATA AND WHITESPACE IS TRIMMED
   trainName = $("#trainName").val().trim();
   destination = $("#destination").val().trim();
   frequency = $("#frequency").val().trim();
 
 //ADDS TRAIN DATA TO DATABASE
-trainData.push ({
+  trainData.push ({
   trainName: trainName,
   destination: destination,
   frequency: frequency,
@@ -53,8 +53,8 @@ $("#trainData").append("<tr><td>" + trainName + "</td><td>" + destination + "</t
 
 });
 
-//html being changed here to reflect data
-trainData.orderByChild("dataAdded").limitToLast(1).on("child_added",function(snapshot){
+//ADDING TRAIN TO THE DATABASE AND A ROW IN THE HTML
+trainData.on("child_added",function(childSnapshot, prevChildKey){
 
   $("#trainNamedisplay").html(snapshot.val().trainName);
   $("#destinationdisplay").html(snapshot.val().destination);
@@ -62,12 +62,13 @@ trainData.orderByChild("dataAdded").limitToLast(1).on("child_added",function(sna
 
 })
 
-
+//THIS IS HARD AND I CAN'T GET MOMENT.JS SHENANIGANS 
 function startTime(){
 
 //convert time?
 //showing current time
-var currentTime = moment().format('HH:mm:');
+var currentTime = moment().format("HH:MM");
+console.log("currentTime")
 $('#time').html(currentTime);
 
 }
